@@ -1,36 +1,37 @@
-import React from "react";
-import Card from "../components/common/Card";
-import Button from "../components/common/Button";
-import { UI_TEXT } from "../constants";
+import { HERO_BG, FILTERS, PROPERTYLISTINGSAMPLE } from "@/constants";
+import Pill from "@/components/common/Pill";
+import PropertyCard from "@/components/common/PropertyCard";
 
-const Home: React.FC = () => {
+export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
-      <header className="mb-8 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">ALX Listing App</h1>
-        <Button label={UI_TEXT.bookNow} />
-      </header>
-
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <Card
-          image="/assets/house-1.jpg"
-          title="Cozy Apartment"
-          description="A lovely apartment in the city center, close to all amenities."
-        />
-        <Card
-          image="/assets/house-2.jpg"
-          title="Beach House"
-          description="Enjoy the ocean view from this spacious house near the coast."
-        />
-        <Card
-          image="/assets/placeholder.jpg"
-          title="Mountain Cabin"
-          description="Escape to the mountains with this peaceful wooden cabin."
-        />
+    <>
+      {/* Hero Section */}
+      <section
+        className="relative h-[400px] flex items-center justify-center text-center text-white"
+        style={{ backgroundImage: `url(${HERO_BG})`, backgroundSize: "cover" }}
+      >
+        <div className="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
+        <div className="relative z-10">
+          <h1 className="text-4xl font-bold">Find your favorite place here!</h1>
+          <p className="mt-4 text-lg">
+            The best prices for over 2 million properties worldwide.
+          </p>
+        </div>
       </section>
-    </main>
+
+      {/* Filters */}
+      <section className="flex flex-wrap gap-3 justify-center py-6">
+        {FILTERS.map((filter, idx) => (
+          <Pill key={idx} label={filter} />
+        ))}
+      </section>
+
+      {/* Listings */}
+      <section className="grid gap-6 px-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-8">
+        {PROPERTYLISTINGSAMPLE.map((property, idx) => (
+          <PropertyCard key={idx} property={property} />
+        ))}
+      </section>
+    </>
   );
 }
-
-
-export default Home

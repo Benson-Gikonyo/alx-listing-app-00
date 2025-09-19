@@ -367,3 +367,21 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps []  =  [
     discount: ""
   }
 ];
+
+
+
+const HERO_BG = "/images/hero-bg.jpg";
+
+const FILTERS = [
+  "Top Villa",
+  "Self Checkin",
+  "Beachfront",
+  "Mountain View",
+  "Pet Friendly",
+  "Luxury",
+  "Countryside",
+];
+
+export { PROPERTYLISTINGSAMPLE, HERO_BG, FILTERS };
+
+
