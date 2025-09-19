@@ -3,7 +3,7 @@ import Card from "../components/common/Card";
 import Button from "../components/common/Button";
 import { UI_TEXT } from "../constants";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <main className="min-h-screen bg-gray-50 p-8">
       <header className="mb-8 flex items-center justify-between">
@@ -31,3 +31,6 @@ export default function Home() {
     </main>
   );
 }
+
+
+export default Home
