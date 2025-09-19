@@ -28,3 +28,7 @@ interface PropertyProps {
   image: string;
   discount: string;
 }
+
+interface LayoutProps {
+  children: ReactNode;
+}
